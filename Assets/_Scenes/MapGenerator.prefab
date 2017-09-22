@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1399726177554784}
+  m_IsPrefabParent: 1
+--- !u!1 &1399726177554784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4823895184276466}
+  - component: {fileID: 114866899931571244}
+  m_Layer: 0
+  m_Name: MapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4823895184276466
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399726177554784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114866899931571244
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1399726177554784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4be277d955311914ba3f633554739223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lm: {fileID: 0}
+  map: {fileID: 2800000, guid: f540df79ca0b1e54fbf8a8f667e27a61, type: 3}
+  colorMappings:
+  - color: {r: 0, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1599074128659710, guid: 449c4d31193224441866cdb76bbce627, type: 2}
+  - color: {r: 1, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1599074128659710, guid: 97f4fd966c471a241b13e8022bce4530, type: 2}
+  - color: {r: 0, g: 0, b: 0.39215687, a: 1}
+    prefab: {fileID: 1547234425901040, guid: f1a4ca93a6cca3e4dabb152c2b35816a, type: 2}
+  - color: {r: 1, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1599074128659710, guid: b9e51a70d49f4d94e831d1082874782e, type: 2}
+  - color: {r: 0.78431374, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1599074128659710, guid: 11d295f1d7d3d7e458df08e484645b59, type: 2}
+  - color: {r: 0.5882353, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1599074128659710, guid: 68877c556723be0479ba8223a148fd46, type: 2}
+  - color: {r: 0.39215687, g: 0, b: 0, a: 1}
+    prefab: {fileID: 1599074128659710, guid: 0ec33adb2e08358449c9a2dc4b11bfeb, type: 2}
+  - color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    prefab: {fileID: 1999250656614302, guid: 82cd4b3d8f0a56440ab309592bda994c, type: 2}
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    prefab: {fileID: 1297804881417536, guid: c5226a8b11fb3dc4db9792ab62f639d9, type: 2}
+  - color: {r: 1, g: 0.39215687, b: 0, a: 1}
+    prefab: {fileID: 1961647217774444, guid: 740fda46aa4a88e40b43ffbfe869a1fb, type: 2}
+  - color: {r: 1, g: 0, b: 1, a: 1}
+    prefab: {fileID: 1599074128659710, guid: fe5aa711708c31a459f69ec75db4b35f, type: 2}
+  - color: {r: 0.5882353, g: 0.19607843, b: 0, a: 1}
+    prefab: {fileID: 1961647217774444, guid: b2d60a0eea3ce17488ed236d4cc62e80, type: 2}
+  - color: {r: 0, g: 0, b: 1, a: 1}
+    prefab: {fileID: 1005052109252276, guid: 59abd2e7a3c57544dae8f531b398d464, type: 2}
+  - color: {r: 0, g: 0.3921569, b: 0, a: 1}
+    prefab: {fileID: 1199599505019280, guid: fe745271ae28d39458b056fe52413926, type: 2}
+  - color: {r: 0, g: 0.5882353, b: 0, a: 1}
+    prefab: {fileID: 1941249893614300, guid: 1a1611ceaa11ccc41bc7cf812c120aa4, type: 2}
+  - color: {r: 0, g: 0.78431374, b: 0, a: 1}
+    prefab: {fileID: 1135704962987832, guid: 88ba1e3f1d6c44a4fbd87d28acfa4371, type: 2}
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1353991673554506, guid: 9c56d296561ef2b4695128e3f26d3c8d, type: 2}
+  - color: {r: 0, g: 1, b: 1, a: 1}
+    prefab: {fileID: 1054868057423598, guid: 32bd82a29d63d8d45837f264ba901bb9, type: 2}
