@@ -6,12 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
+	public Text level;
 	public GameObject go, complete, fail;
+
+	public Animator bgAnim;
 
 	GenerateLevel gl;
 
 	void Start () {
 		gl = GameObject.FindGameObjectWithTag ("LM").GetComponent<GenerateLevel> ();
+
+		level.text = "Level  " + (gl.mapId + 1);
 	}
 
 	public void GameStart () {
@@ -25,6 +30,7 @@ public class GameManager : MonoBehaviour {
 	public void GameFinish () {
 		
 		complete.SetActive (true);
+		bgAnim.SetTrigger ("end");
 
 		int stage = gl.stageId;
 		int map = gl.mapId;
@@ -60,6 +66,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	IEnumerator FailCoroutine () {
+		bgAnim.SetTrigger ("end");
 		fail.SetActive (true);
 		yield return new WaitForSeconds (1f);
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
