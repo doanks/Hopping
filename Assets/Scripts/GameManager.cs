@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	void GotoMenu () {
-		SceneManager.LoadScene ("MenuLevel");
+		SceneManager.LoadScene ("LevelPack");
 	}
 
 	void Restart () {
