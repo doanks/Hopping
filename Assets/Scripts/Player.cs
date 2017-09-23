@@ -57,7 +57,7 @@ public class Player : MonoBehaviour {
 		anim.SetBool ("grounded", grounded);
 
 
-		if (Input.GetButtonDown("Jump") && grounded && !gameover) {
+		if (Input.GetMouseButtonDown(0) && grounded && !gameover) {
 
 			if (!firstTap) {
 				firstTap = true;

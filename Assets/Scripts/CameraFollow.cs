@@ -49,7 +49,8 @@ public class CameraFollow : MonoBehaviour {
 			transform.position = camPos;
 		}
 		else
-			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+			//transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+			transform.position = camPos;
 		
 	}
 }
