@@ -72,11 +72,19 @@ MonoBehaviour:
     - {fileID: 2800000, guid: 6804bf7a1b2b9514cbcbb71331a311ec, type: 3}
     - {fileID: 2800000, guid: a43fd00c6eedce84c9dd5faf59149d15, type: 3}
     - {fileID: 2800000, guid: db113c45d39024443b0447d5b26f1f64, type: 3}
+    - {fileID: 2800000, guid: aeb66ac898a725948b569f4f590f2ba1, type: 3}
+    - {fileID: 2800000, guid: 55331ec1b46612f42a0b106a30178db6, type: 3}
   - maps:
     - {fileID: 2800000, guid: 8c0223ffd8f7879408b2d5c5a34ff096, type: 3}
     - {fileID: 2800000, guid: 6c1509889991cb843a91103564cb23d1, type: 3}
     - {fileID: 2800000, guid: 7c0b62010d4feeb48b76a09be48af9b3, type: 3}
     - {fileID: 2800000, guid: 5b1ff24a6bfd57e44882fecfc93bcabe, type: 3}
+    - {fileID: 2800000, guid: ea9c42cc9b080094490d3351c3cb14d6, type: 3}
+    - {fileID: 2800000, guid: d80ad4e87daec2043b943d70341d40e3, type: 3}
+    - {fileID: 2800000, guid: af1743bcd063db747a47e7280fafe24e, type: 3}
+    - {fileID: 2800000, guid: 09fcaaa754015e342a5176ea4a8bffa3, type: 3}
+    - {fileID: 2800000, guid: 657d155866925ba439d0d9bc4b4ed504, type: 3}
+    - {fileID: 2800000, guid: 07a8fc6a07dbcbc47a181981df0ec457, type: 3}
   - maps:
     - {fileID: 2800000, guid: 72af6b6ac68bc3c44b5f37b3e07b2e89, type: 3}
   stageId: 0
