@@ -77,10 +77,10 @@ MonoBehaviour:
   - color: {r: 1, g: 0, b: 1, a: 1}
     prefab: {fileID: 1599074128659710, guid: fe5aa711708c31a459f69ec75db4b35f, type: 2}
   - color: {r: 0.5882353, g: 0.19607843, b: 0, a: 1}
-    prefab: {fileID: 1961647217774444, guid: b2d60a0eea3ce17488ed236d4cc62e80, type: 2}
+    prefab: {fileID: 1502780352749912, guid: 2b1c7733057e7ed4fa55e4436390a966, type: 2}
   - color: {r: 0, g: 0, b: 1, a: 1}
     prefab: {fileID: 1005052109252276, guid: 59abd2e7a3c57544dae8f531b398d464, type: 2}
-  - color: {r: 0, g: 0.3921569, b: 0, a: 1}
+  - color: {r: 0, g: 0.43137255, b: 0, a: 1}
     prefab: {fileID: 1199599505019280, guid: fe745271ae28d39458b056fe52413926, type: 2}
   - color: {r: 0, g: 0.5882353, b: 0, a: 1}
     prefab: {fileID: 1941249893614300, guid: 1a1611ceaa11ccc41bc7cf812c120aa4, type: 2}

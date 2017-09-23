@@ -26,11 +26,26 @@ public class GameManager : MonoBehaviour {
 		
 		complete.SetActive (true);
 
-		if (gl.id < gl.maps.Length - 1) {
-			gl.id++;
-			gl.SetMap (gl.id);
-			int a = PlayerPrefs.GetInt ("stage1_unlock_count");
-			if (a < gl.id) PlayerPrefs.SetInt ("stage1_unlock_count", gl.id);
+		int stage = gl.stageId;
+		int map = gl.mapId;
+
+		if (gl.mapId < gl.stages[stage].maps.Length - 1) {
+			map++;
+			gl.SetMap (stage, map);
+
+			if (stage == 0) {
+				int a = PlayerPrefs.GetInt ("stage1_unlock_count");
+				if (a < map)
+					PlayerPrefs.SetInt ("stage1_unlock_count", map);
+			} else if (stage == 1) {
+				int a = PlayerPrefs.GetInt ("stage2_unlock_count");
+				if (a < map)
+					PlayerPrefs.SetInt ("stage2_unlock_count", map);
+			} else {
+				int a = PlayerPrefs.GetInt ("stage3_unlock_count");
+				if (a < map)
+					PlayerPrefs.SetInt ("stage3_unlock_count", map);
+			}
 			Invoke ("Restart", 1f);
 		}
 		else Invoke ("GotoMenu", 1f);

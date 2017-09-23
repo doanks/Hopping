@@ -2,14 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class MapStages {
+
+	public Texture2D[] maps;
+
+	public MapStages (Texture2D[] maps) {
+		this.maps = maps;
+	}
+}
+
 public class GenerateLevel : MonoBehaviour {
 
 	public static GenerateLevel instance;
 
 	public Texture2D mapSelected;
-	public Texture2D[] maps;
+	public MapStages[] stages;
 
-	public int id;
+	public int stageId;
+	public int mapId;
 
 	void Awake () {
 		if (instance == null) {
@@ -21,13 +32,9 @@ public class GenerateLevel : MonoBehaviour {
 		DontDestroyOnLoad (gameObject);
 	}
 
-	void Start () {
-		//id = PlayerPrefs.GetInt ("stage1_unlock_count");
-		//SetMap (id);
-	}
-
-	public void SetMap (int id) {
-		mapSelected = maps [id];
-		this.id = id;
+	public void SetMap (int stageId, int mapId) {
+		mapSelected = stages[stageId].maps[mapId];
+		this.stageId = stageId;
+		this.mapId = mapId;
 	}
 }

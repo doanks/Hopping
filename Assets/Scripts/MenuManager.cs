@@ -14,6 +14,8 @@ public class MenuManager : MonoBehaviour {
 
 	public GameObject levelPack, stages;
 
+	int stageId;
+
 	void Start () {
 		//PlayerPrefs.DeleteAll ();
 		prefs1 = PlayerPrefs.GetInt ("stage1_unlock_count");
@@ -25,7 +27,7 @@ public class MenuManager : MonoBehaviour {
 		if (levelChoice < levelCount) {
 			levelChoice++;
 			leveltext.text = (levelChoice + 1).ToString();
-			GenerateLevel.instance.SetMap (levelChoice);
+			GenerateLevel.instance.SetMap (stageId, levelChoice);
 		}
 	}
 
@@ -33,7 +35,7 @@ public class MenuManager : MonoBehaviour {
 		if (levelChoice > 0 ) {
 			levelChoice--;
 			leveltext.text = (levelChoice + 1).ToString();
-			GenerateLevel.instance.SetMap (levelChoice);
+			GenerateLevel.instance.SetMap (stageId, levelChoice);
 		}
 	}
 
@@ -42,6 +44,8 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void ButtonStages (int id) {
+
+		stageId = id;
 		
 		if (id == 0) levelCount = prefs1;
 		else if (id == 1) levelCount = prefs2;
@@ -49,7 +53,7 @@ public class MenuManager : MonoBehaviour {
 
 		levelChoice = levelCount;
 		leveltext.text = (levelCount+1).ToString ();
-		GenerateLevel.instance.SetMap (levelChoice);
+		GenerateLevel.instance.SetMap (id, levelChoice);
 
 		stages.SetActive (false);
 		levelPack.SetActive (true);

@@ -82,6 +82,14 @@ public class Player : MonoBehaviour {
 			transform.localScale = new Vector2 (flipX, transform.localScale.y);
 			cam.facingRight = !cam.facingRight;
 		}
+
+		if (other.tag == "Fast") {
+			speed = 10;
+		}
+
+		if (other.tag == "Slow") {
+			speed = 5;
+		}
 	}
 
 	void OnCollisionEnter2D (Collision2D other) {

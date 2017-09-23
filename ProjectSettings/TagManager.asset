@@ -9,6 +9,8 @@ TagManager:
   - CoinLerp
   - LM
   - Perr
+  - Fast
+  - Slow
   layers:
   - Default
   - TransparentFX

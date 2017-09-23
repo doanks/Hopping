@@ -52,18 +52,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapSelected: {fileID: 0}
-  maps:
-  - {fileID: 2800000, guid: 72af6b6ac68bc3c44b5f37b3e07b2e89, type: 3}
-  - {fileID: 2800000, guid: f1c28a95fb7e44d4596d05f13a58c599, type: 3}
-  - {fileID: 2800000, guid: e8aa0052b99a57f48a1ccfe175ff2cbb, type: 3}
-  - {fileID: 2800000, guid: 822e1aa16bb309d4ea8192039540a536, type: 3}
-  - {fileID: 2800000, guid: 427a3b3a11c8cf943a1d0466ca375e19, type: 3}
-  - {fileID: 2800000, guid: af8fbc407fd211241aae26095f374d20, type: 3}
-  - {fileID: 2800000, guid: 738b924894437f74f87b846f57ca7d98, type: 3}
-  - {fileID: 2800000, guid: 99345f37a83ff7d46a488b166cdd45f0, type: 3}
-  - {fileID: 2800000, guid: 241dc74296952a64eaf4eb14f99c6a15, type: 3}
-  - {fileID: 2800000, guid: 4df758fa6768faf4a913598e434cd2e7, type: 3}
-  - {fileID: 2800000, guid: 91ace9c8ebe93d34ebe493742f64f9e6, type: 3}
-  - {fileID: 2800000, guid: 77e099de70565c549bde9a7e487580cf, type: 3}
-  - {fileID: 2800000, guid: a31acb74b5d1d164a90f85121e51cb00, type: 3}
-  id: 0
+  stages:
+  - maps:
+    - {fileID: 2800000, guid: 72af6b6ac68bc3c44b5f37b3e07b2e89, type: 3}
+    - {fileID: 2800000, guid: f1c28a95fb7e44d4596d05f13a58c599, type: 3}
+    - {fileID: 2800000, guid: e8aa0052b99a57f48a1ccfe175ff2cbb, type: 3}
+    - {fileID: 2800000, guid: 822e1aa16bb309d4ea8192039540a536, type: 3}
+    - {fileID: 2800000, guid: 427a3b3a11c8cf943a1d0466ca375e19, type: 3}
+    - {fileID: 2800000, guid: af8fbc407fd211241aae26095f374d20, type: 3}
+    - {fileID: 2800000, guid: 738b924894437f74f87b846f57ca7d98, type: 3}
+    - {fileID: 2800000, guid: 99345f37a83ff7d46a488b166cdd45f0, type: 3}
+    - {fileID: 2800000, guid: 241dc74296952a64eaf4eb14f99c6a15, type: 3}
+    - {fileID: 2800000, guid: 4df758fa6768faf4a913598e434cd2e7, type: 3}
+    - {fileID: 2800000, guid: 91ace9c8ebe93d34ebe493742f64f9e6, type: 3}
+    - {fileID: 2800000, guid: 77e099de70565c549bde9a7e487580cf, type: 3}
+    - {fileID: 2800000, guid: a31acb74b5d1d164a90f85121e51cb00, type: 3}
+    - {fileID: 2800000, guid: ba5b257b104a5c440bb54d45a44f228a, type: 3}
+    - {fileID: 2800000, guid: c7e64fc67768f254881842ba45f2a341, type: 3}
+    - {fileID: 2800000, guid: 6804bf7a1b2b9514cbcbb71331a311ec, type: 3}
+    - {fileID: 2800000, guid: a43fd00c6eedce84c9dd5faf59149d15, type: 3}
+    - {fileID: 2800000, guid: db113c45d39024443b0447d5b26f1f64, type: 3}
+  - maps:
+    - {fileID: 2800000, guid: 8c0223ffd8f7879408b2d5c5a34ff096, type: 3}
+    - {fileID: 2800000, guid: 6c1509889991cb843a91103564cb23d1, type: 3}
+    - {fileID: 2800000, guid: 7c0b62010d4feeb48b76a09be48af9b3, type: 3}
+    - {fileID: 2800000, guid: 5b1ff24a6bfd57e44882fecfc93bcabe, type: 3}
+  - maps:
+    - {fileID: 2800000, guid: 72af6b6ac68bc3c44b5f37b3e07b2e89, type: 3}
+  stageId: 0
+  mapId: 0
