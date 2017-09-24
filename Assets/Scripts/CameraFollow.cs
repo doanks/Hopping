@@ -19,13 +19,24 @@ public class CameraFollow : MonoBehaviour {
 	void Start () {
 		lm = GameObject.FindGameObjectWithTag ("LM").GetComponent<GenerateLevel> ();
 		map = lm.mapSelected;
+
+		offset = transform.position - target.transform.position;
+		Debug.Log (offset);
 	}
+
+	Vector3 offset;
+
+//	void Update () {
+//
+//		transform.position = target.transform.position + offset;
+//	}
 		
 	// Update is called once per frame
 	void LateUpdate () {
 
 		if (!finish) {
 			yPos = target.transform.position.y + 1f;
+			//yPos = 6;
 
 			if (facingRight)
 				offsetX = 4f;
@@ -49,8 +60,8 @@ public class CameraFollow : MonoBehaviour {
 			transform.position = camPos;
 		}
 		else
-			//transform.position = Vector3.Lerp (transform.position, camPos, smooth);
-			transform.position = camPos;
+			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+			//transform.position = camPos;
 		
 	}
 }

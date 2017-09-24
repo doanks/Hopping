@@ -19,6 +19,7 @@ public class GenerateLevel : MonoBehaviour {
 	public Texture2D mapSelected;
 	public MapStages[] stages;
 
+	public int stageCount;
 	public int stageId;
 	public int mapId;
 

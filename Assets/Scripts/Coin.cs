@@ -11,9 +11,13 @@ public class Coin : MonoBehaviour {
 
 	public Animator anim;
 
+	GameManager gm;
+
 	void Start () {
 
 		coinLerp = GameObject.FindGameObjectWithTag ("CoinLerp");
+
+		gm = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameManager>();
 	}
 
 	void Update () {
@@ -27,6 +31,7 @@ public class Coin : MonoBehaviour {
 		if (other.tag == "Player") {
 			getCoin = true;
 			anim.SetTrigger ("collect");
+			gm.currentCoin++;
 			Destroy(gameObject, 1f);
 		}
 	}

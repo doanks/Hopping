@@ -1223,9 +1223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leveltext: {fileID: 243852507}
   levelChoice: 0
-  prefs1: 0
-  prefs2: 0
-  prefs3: 0
+  stagePrefs: 000000000000000000000000
   levelPack: {fileID: 2118383370}
   stages: {fileID: 1125017561}
 --- !u!4 &1526333256
