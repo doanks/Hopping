@@ -18,7 +18,7 @@ public class MenuManager : MonoBehaviour {
 	int stageId;
 
 	void Start () {
-		
+		PlayerPrefs.DeleteAll ();
 		GenerateLevel.instance.stageCount = stagePrefs.Length;
 		for (int i = 0; i < stagePrefs.Length; i++) {
 			stagePrefs[i] = PlayerPrefs.GetInt ("unlock_count_stage" + i);

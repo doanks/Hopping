@@ -53,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1442073672921132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalPosition: {x: 0, y: -0.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4903715920560538}
@@ -65,8 +65,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601643489653122}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: 0.06749998, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1}
   m_Children:
   - {fileID: 4098384573591320}
@@ -87,7 +87,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 3
+  m_GravityScale: 2.8
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -136,11 +136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a70d9cbf7258e74a905e927969ccbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 5
   rb: {fileID: 50801765061442842}
   anim: {fileID: 95522846004202950}
   groundPos: {fileID: 4098384573591320}
-  jumpPower: 11
+  jumpPower: 12
   myParent: {fileID: 0}
 --- !u!212 &212858676029948056
 SpriteRenderer:
@@ -174,7 +174,7 @@ SpriteRenderer:
   m_SortingLayerID: -162934993
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d8b5d1dfc88a7e949818234bd6bde0ac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5d406411a717ac94e8089d07910b583d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

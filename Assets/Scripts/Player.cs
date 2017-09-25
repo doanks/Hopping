@@ -15,6 +15,8 @@ public class Player : MonoBehaviour {
 
 	bool firstTap;
 	bool gameover;
+	bool finish;
+	bool jump;
 
 	float gravityDefault;
 	bool gravityChange;
@@ -42,9 +44,9 @@ public class Player : MonoBehaviour {
 		//cam.facingRight = Mathf.Sign(transform.localScale.x) == 1 ? true : false;
 		cam.target = gameObject.transform;
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
+
 		if (firstTap && !gameover) {
 			if(cam.facingRight)
 				transform.Translate (Vector2.right * speed * Time.deltaTime);
@@ -53,12 +55,29 @@ public class Player : MonoBehaviour {
 		}
 
 		bool grounded = Physics2D.Linecast(transform.position, groundPos.position, 1 << LayerMask.NameToLayer("Ground"));
-
 		anim.SetBool ("grounded", grounded);
 
+		//if (Input.GetKeyDown (KeyCode.Space) && grounded && !gameover)
+		if (Input.GetMouseButtonDown(0) && grounded && !gameover)
+			jump = true;
 
-		if (Input.GetMouseButtonDown(0) && grounded && !gameover) {
+		if (transform.position.y < 0 && !gameover && !finish) {
 
+			gameover = true;
+			cam.finish = true;
+
+			anim.enabled = false;
+			rb.bodyType = RigidbodyType2D.Static;
+
+			gm.GameFail ();
+		}
+	}
+	
+	// Update is called once per frame
+	void FixedUpdate () {
+
+		if (jump) {
+			jump = false;
 			if (!firstTap) {
 				firstTap = true;
 				rb.bodyType = RigidbodyType2D.Dynamic;
@@ -72,6 +91,7 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		
 		if (other.tag == "Finish") {
+			finish = true;
 			cam.finish = true;
 			gm.GameFinish ();
 		}
@@ -99,8 +119,8 @@ public class Player : MonoBehaviour {
 			rb.gravityScale = gravityDefault;
 		}
 
-		if (other.collider.tag == "Fail") {
-
+		if (other.collider.tag == "Fail" && !finish) {
+			
 			gameover = true;
 			cam.finish = true;
 
@@ -112,8 +132,8 @@ public class Player : MonoBehaviour {
 
 		if (other.collider.tag == "Perr") {
 			gravityChange = true;
-			rb.gravityScale = 5f;
-			rb.velocity = new Vector2 (rb.velocity.x, jumpPower * 2);
+			rb.gravityScale = 6.5f;
+			rb.velocity = new Vector2 (rb.velocity.x, 28);
 		}
 	}
 }

@@ -71,14 +71,14 @@ MonoBehaviour:
     prefab: {fileID: 1599074128659710, guid: 0ec33adb2e08358449c9a2dc4b11bfeb, type: 2}
   - color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
     prefab: {fileID: 1999250656614302, guid: 82cd4b3d8f0a56440ab309592bda994c, type: 2}
-  - color: {r: 1, g: 1, b: 1, a: 1}
-    prefab: {fileID: 1297804881417536, guid: c5226a8b11fb3dc4db9792ab62f639d9, type: 2}
+  - color: {r: 0, g: 1, b: 1, a: 1}
+    prefab: {fileID: 1054868057423598, guid: 32bd82a29d63d8d45837f264ba901bb9, type: 2}
   - color: {r: 1, g: 0.39215687, b: 0, a: 1}
     prefab: {fileID: 1961647217774444, guid: 740fda46aa4a88e40b43ffbfe869a1fb, type: 2}
   - color: {r: 1, g: 0, b: 1, a: 1}
     prefab: {fileID: 1599074128659710, guid: fe5aa711708c31a459f69ec75db4b35f, type: 2}
-  - color: {r: 0.5882353, g: 0.19607843, b: 0, a: 1}
-    prefab: {fileID: 1502780352749912, guid: 2b1c7733057e7ed4fa55e4436390a966, type: 2}
+  - color: {r: 0, g: 1, b: 0, a: 1}
+    prefab: {fileID: 1353991673554506, guid: 9c56d296561ef2b4695128e3f26d3c8d, type: 2}
   - color: {r: 0, g: 0, b: 1, a: 1}
     prefab: {fileID: 1005052109252276, guid: 59abd2e7a3c57544dae8f531b398d464, type: 2}
   - color: {r: 0, g: 0.43137255, b: 0, a: 1}
@@ -87,7 +87,3 @@ MonoBehaviour:
     prefab: {fileID: 1941249893614300, guid: 1a1611ceaa11ccc41bc7cf812c120aa4, type: 2}
   - color: {r: 0, g: 0.78431374, b: 0, a: 1}
     prefab: {fileID: 1135704962987832, guid: 88ba1e3f1d6c44a4fbd87d28acfa4371, type: 2}
-  - color: {r: 0, g: 1, b: 0, a: 1}
-    prefab: {fileID: 1353991673554506, guid: 9c56d296561ef2b4695128e3f26d3c8d, type: 2}
-  - color: {r: 0, g: 1, b: 1, a: 1}
-    prefab: {fileID: 1054868057423598, guid: 32bd82a29d63d8d45837f264ba901bb9, type: 2}

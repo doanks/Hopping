@@ -2,7 +2,7 @@
 
 public class CameraFollow : MonoBehaviour {
 
-	public GenerateLevel lm;
+	public GenerateLevel gl;
 	public Transform target;
 	public Texture2D map;
 	public float smooth;
@@ -17,14 +17,15 @@ public class CameraFollow : MonoBehaviour {
 	bool firstPos;
 
 	void Start () {
-		lm = GameObject.FindGameObjectWithTag ("LM").GetComponent<GenerateLevel> ();
-		map = lm.mapSelected;
-
-		offset = transform.position - target.transform.position;
-		Debug.Log (offset);
+//		lm = GameObject.FindGameObjectWithTag ("LM").GetComponent<GenerateLevel> ();
+		gl = FindObjectOfType<GenerateLevel>();
+		map = gl.mapSelected;
+//
+//		offset = transform.position - target.transform.position;
+//		Debug.Log (offset);
 	}
 
-	Vector3 offset;
+//	Vector3 offset;
 
 //	void Update () {
 //
@@ -34,34 +35,40 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 
-		if (!finish) {
-			yPos = target.transform.position.y + 1f;
-			//yPos = 6;
+		yPos = target.transform.position.y + 1f;
+		//yPos = 6;
 
-			if (facingRight)
-				offsetX = 4f;
-			else
-				offsetX = -4f;
+		if (facingRight)
+			offsetX = 4f;
+		else
+			offsetX = -4f;
 
-			if (target.transform.position.x + offsetX < camLimitDistance) {
-				xPos = camLimitDistance;
-			}
-			else if (target.transform.position.x + offsetX > map.width - camLimitDistance - 1f) {
-				xPos = map.width - camLimitDistance - 1f;
-			} 
-			else {
-				xPos = target.transform.position.x + offsetX;
-			}
+		if (target.transform.position.x + offsetX < camLimitDistance) {
+			xPos = camLimitDistance;
 		}
+		else if (target.transform.position.x + offsetX > map.width - camLimitDistance - 1f) {
+			xPos = map.width - camLimitDistance - 1f;
+		} 
+		else {
+			xPos = target.transform.position.x + offsetX;
+		}
+
 		Vector3 camPos = new Vector3 (xPos, yPos, transform.position.z);
 
-		if (!firstPos) {
-			firstPos = true;
-			transform.position = camPos;
-		}
-		else
+
+		if (!finish) {
 			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
-			//transform.position = camPos;
+		}
+
+
+//		if (!firstPos) {
+//			firstPos = true;
+//			transform.position = camPos;
+//		}
+//		else
+//			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+
+
 		
 	}
 }
