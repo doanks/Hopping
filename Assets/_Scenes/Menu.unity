@@ -136,10 +136,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: Menu
+  - name: BGM Menu
     clip: {fileID: 8300000, guid: ff0fa8c94ba958e4cbb7918fcfbb2d60, type: 3}
     volume: 1
+    loop: 1
+    bgm: 1
+    source: {fileID: 0}
+  - name: BGM Gameplay
+    clip: {fileID: 8300000, guid: da15695a983183f44b7a8622038c3d89, type: 3}
+    volume: 1
+    loop: 1
+    bgm: 1
+    source: {fileID: 0}
+  - name: Collect
+    clip: {fileID: 8300000, guid: 3e04ca85436469643930d5f1c2282cb2, type: 3}
+    volume: 1
     loop: 0
+    bgm: 0
+    source: {fileID: 0}
+  - name: Fail
+    clip: {fileID: 8300000, guid: aaff16b5a7522e7418c982c155552fe5, type: 3}
+    volume: 1
+    loop: 0
+    bgm: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: bb99a75cc59908840a5f6f43bccfb98b, type: 3}
+    volume: 1
+    loop: 0
+    bgm: 0
     source: {fileID: 0}
 --- !u!4 &93051784
 Transform:

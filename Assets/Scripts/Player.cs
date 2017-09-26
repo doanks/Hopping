@@ -82,9 +82,10 @@ public class Player : MonoBehaviour {
 				firstTap = true;
 				rb.bodyType = RigidbodyType2D.Dynamic;
 				gm.GameStart ();
-			}
-			else
+			} else {
 				rb.velocity = new Vector2 (rb.velocity.x, jumpPower);
+				FindObjectOfType<SoundManager> ().Play ("Jump");
+			}
 		}
 	}
 
@@ -120,7 +121,9 @@ public class Player : MonoBehaviour {
 		}
 
 		if (other.collider.tag == "Fail" && !finish) {
-			
+
+			FindObjectOfType<SoundManager> ().Play ("Fail");
+
 			gameover = true;
 			cam.finish = true;
 

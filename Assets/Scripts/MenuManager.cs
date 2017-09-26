@@ -42,6 +42,7 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void ButtonStart () {
+		FindObjectOfType<SoundManager> ().Stop ("BGM Menu");
 		SceneManager.LoadScene ("Gameplay");
 	}
 

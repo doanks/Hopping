@@ -12,6 +12,7 @@ public class Sound {
 	public float volume;
 
 	public bool loop;
+	public bool bgm;
 
 	[HideInInspector]
 	public AudioSource source;
@@ -19,9 +20,20 @@ public class Sound {
 
 public class SoundManager : MonoBehaviour {
 
+	public static SoundManager instance;
+
 	public Sound[] sounds;
 
 	void Awake () {
+
+		if (instance == null)
+			instance = this;
+		else {
+			Destroy (gameObject);
+			return;
+		}
+
+		DontDestroyOnLoad (gameObject);
 
 		foreach (Sound s in sounds) {
 			s.source = gameObject.AddComponent<AudioSource>();
@@ -31,10 +43,32 @@ public class SoundManager : MonoBehaviour {
 		}
 	}
 
+	void Start () {
+		Play ("BGM Menu");
+	}
+
+	void Update () {
+		if (Input.GetButtonDown ("Jump")) {
+			Play ("BGM Menu");
+		}
+	}
+
 	public void Play (string name) {
 		Sound s = Array.Find (sounds, sound => sound.name == name);
 		if (s == null)
 			return;
+
+		if (s.bgm && s.source.isPlaying) {
+			return;
+		}
+
 		s.source.Play ();
+	}
+
+	public void Stop (string name) {
+		Sound s = Array.Find (sounds, sound => sound.name == name);
+		if (s == null)
+			return;
+		s.source.Stop ();
 	}
 }

@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour {
 		
 		gl = GameObject.FindGameObjectWithTag ("LM").GetComponent<GenerateLevel> ();
 
+		FindObjectOfType<SoundManager> ().Play ("BGM Gameplay");
+
 		level.text = "Level  " + (gl.mapId + 1);
 
 		totalCoin = 0;
