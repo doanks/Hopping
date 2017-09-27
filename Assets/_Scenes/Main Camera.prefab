@@ -82,7 +82,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0.14901961, b: 0.16862746, a: 0}
+  m_BackGroundColor: {r: 0.6627451, g: 0.91764706, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c52ca6ebb07cb204cb7e290efa0e6746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lm: {fileID: 0}
+  gl: {fileID: 0}
   target: {fileID: 0}
   map: {fileID: 0}
   smooth: 0.1

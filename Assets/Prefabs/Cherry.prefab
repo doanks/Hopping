@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smooth: 0.05
+  coinLerp: {fileID: 0}
   anim: {fileID: 95230458449736670}
 --- !u!212 &212164858640030474
 SpriteRenderer:
@@ -120,7 +121,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300002, guid: ab6bee84233f7e44db701b5bfaba67e4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b68ade881c846d149906f27b1a5d98ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
