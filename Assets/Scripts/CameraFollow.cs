@@ -35,6 +35,9 @@ public class CameraFollow : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 
+		if (finish)
+			return;
+
 		yPos = target.transform.position.y + 1f;
 		//yPos = 6;
 
@@ -56,17 +59,17 @@ public class CameraFollow : MonoBehaviour {
 		Vector3 camPos = new Vector3 (xPos, yPos, transform.position.z);
 
 
-		if (!finish) {
-			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
-		}
-
-
-//		if (!firstPos) {
-//			firstPos = true;
-//			transform.position = camPos;
-//		}
-//		else
+//		if (!finish) {
 //			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+//		}
+//
+
+		if (!firstPos) {
+			firstPos = true;
+			transform.position = camPos;
+		}
+		else
+			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
 
 
 		

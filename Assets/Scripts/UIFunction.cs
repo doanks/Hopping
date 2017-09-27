@@ -9,19 +9,11 @@ public class UIFunction : MonoBehaviour {
 		SceneManager.LoadScene (scenename);
 	}
 
-	public void Update () {
+	void Update () {
 
 		if (Input.GetKeyDown(KeyCode.Escape) && SceneManager.GetActiveScene().name == "Menu") {
 			Application.Quit ();
 		}
-	}
-
-	public void ButtonAudio () {
-		mute = !mute;
-		if (mute) 
-			FindObjectOfType<SoundManager> ().SetVolume (0f);
-		else
-			FindObjectOfType<SoundManager> ().SetVolume (1f);
 	}
 
 	public void Exit () {
