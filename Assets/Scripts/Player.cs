@@ -135,6 +135,7 @@ public class Player : MonoBehaviour {
 
 		if (other.collider.tag == "Perr") {
 			gravityChange = true;
+			FindObjectOfType<SoundManager> ().Play ("Long Jump");
 			rb.gravityScale = 6.5f;
 			rb.velocity = new Vector2 (rb.velocity.x, 28);
 		}

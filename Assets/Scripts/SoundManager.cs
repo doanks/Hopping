@@ -47,12 +47,6 @@ public class SoundManager : MonoBehaviour {
 		Play ("BGM Menu");
 	}
 
-	void Update () {
-		if (Input.GetButtonDown ("Jump")) {
-			Play ("BGM Menu");
-		}
-	}
-
 	public void Play (string name) {
 		Sound s = Array.Find (sounds, sound => sound.name == name);
 		if (s == null)
@@ -70,5 +64,11 @@ public class SoundManager : MonoBehaviour {
 		if (s == null)
 			return;
 		s.source.Stop ();
+	}
+
+	public void SetVolume (float volume) {
+		foreach (Sound s in sounds) {
+			s.source.volume = volume * s.volume;
+		}
 	}
 }
