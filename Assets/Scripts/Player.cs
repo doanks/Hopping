@@ -28,7 +28,6 @@ public class Player : MonoBehaviour {
 	void Start () {
 
 		gm	= FindObjectOfType<GameManager> ();
-
 		cam = FindObjectOfType<CameraFollow> ();
 
 		gravityDefault = rb.gravityScale;
@@ -47,7 +46,10 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 
-		if (firstTap && !gameover) {
+		if (gameover)
+			return;
+
+		if (firstTap) {
 			if(cam.facingRight)
 				transform.Translate (Vector2.right * speed * Time.deltaTime);
 			else
@@ -58,10 +60,10 @@ public class Player : MonoBehaviour {
 		anim.SetBool ("grounded", grounded);
 
 		//if (Input.GetKeyDown (KeyCode.Space) && grounded && !gameover)
-		if (Input.GetMouseButtonDown(0) && grounded && !gameover)
+		if (Input.GetMouseButtonDown(0) && grounded)
 			jump = true;
 
-		if (transform.position.y < 0 && !gameover && !finish) {
+		if (transform.position.y < 0 && !finish) {
 
 			gameover = true;
 			cam.finish = true;

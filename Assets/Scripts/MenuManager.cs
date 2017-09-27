@@ -21,7 +21,9 @@ public class MenuManager : MonoBehaviour {
 		//PlayerPrefs.DeleteAll ();
 		FindObjectOfType<SoundManager> ().Stop ("BGM Gameplay");
 		FindObjectOfType<SoundManager> ().Play ("BGM Menu");
+
 		GenerateLevel.instance.stageCount = stagePrefs.Length;
+
 		for (int i = 0; i < stagePrefs.Length; i++) {
 			stagePrefs[i] = PlayerPrefs.GetInt ("unlock_count_stage" + i);
 		}
