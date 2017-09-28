@@ -16,19 +16,20 @@ public class CameraFollow : MonoBehaviour {
 
 	bool firstPos;
 
+	//Vector3 velocity = Vector3.zero;
+
 	void Start () {
 
 		gl = FindObjectOfType<GenerateLevel>();
 		map = gl.mapSelected;
 	}
 		
-	// Update is called once per frame
-	void LateUpdate () {
+	void Update () {
 
-		if (finish)
+		if (finish || target == null)
 			return;
 
-		yPos = target.transform.position.y + 1f;
+		yPos = target.transform.position.y + .5f;
 
 		if (facingRight)
 			offsetX = 4f;
@@ -46,12 +47,33 @@ public class CameraFollow : MonoBehaviour {
 		}
 
 		Vector3 camPos = new Vector3 (xPos, yPos, transform.position.z);
+		transform.position = camPos;
 
-		if (!firstPos) {
-			firstPos = true;
-			transform.position = camPos;
-		}
-		else
-			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+//		if (!firstPos) {
+//			firstPos = true;
+//			transform.position = camPos;
+//		} else
+//			transform.position = Vector3.SmoothDamp (transform.position, camPos, ref velocity, smooth);
+			//transform.position = Vector3.Lerp (transform.position, camPos, smooth);
 	}
+
+//	Vector3 offset;
+//
+////	public void GetOffset () {
+////		offset = transform.position - target.transform.position;
+////	}
+//
+//	void LateUpdate () {
+//
+//		if (target == null)
+//			return;
+//		
+//		//transform.position = target.transform.position + offset;
+//
+//		Vector3 delta = target.transform.position - Vector3.zero;
+//		Vector3 destination = transform.position + delta;
+//
+//		transform.position = destination;
+//
+//	}
 }

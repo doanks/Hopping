@@ -5,7 +5,7 @@ public class ScrollingBackground : MonoBehaviour {
 	public float backgroundSize;
 	public float viewZone;
 	public float paralaxSpeed;
-	public float smoothVerticalLerp;
+	//public float smoothVerticalLerp;
 	 
 	Transform cameraTransform;
 	Transform[] layers;
@@ -51,10 +51,12 @@ public class ScrollingBackground : MonoBehaviour {
 	void Update () {
 
 		float deltaX = cameraTransform.position.x - lastCameraX;
-		float posX = transform.position.x + (deltaX * paralaxSpeed);
-		float lerpY = Mathf.Lerp (transform.position.y, cameraTransform.position.y, smoothVerticalLerp); 
-		transform.position = new Vector3 (posX, lerpY, transform.position.z);
-		//transform.position += Vector3.right * (deltaX * paralaxSpeed);
+
+//		float posX = transform.position.x + (deltaX * paralaxSpeed);
+//		float lerpY = Mathf.Lerp (transform.position.y, cameraTransform.position.y, smoothVerticalLerp); 
+//		transform.position = new Vector3 (posX, lerpY, transform.position.z);
+
+		transform.position += Vector3.right * (deltaX * paralaxSpeed);
 		lastCameraX = cameraTransform.position.x;
 
 		if (cameraTransform.position.x < (layers [leftIndex].transform.position.x + viewZone)) {

@@ -16,7 +16,7 @@ public class Player : MonoBehaviour {
 	bool firstTap;
 	bool gameover;
 	bool finish;
-	bool jump;
+	bool Jump;
 
 	float gravityDefault;
 	bool gravityChange;
@@ -45,23 +45,39 @@ public class Player : MonoBehaviour {
 	}
 
 	void Update () {
+		bool grounded = Physics2D.Linecast(transform.position, groundPos.position, 1 << LayerMask.NameToLayer("Ground"));
+		anim.SetBool ("grounded", grounded);
+
+		if (Input.GetMouseButtonDown(0) && grounded){
+			Jump = true;
+		}
+	}
+
+	void FixedUpdate () {
 
 		if (gameover)
 			return;
 
-		if (firstTap) {
-			if(cam.facingRight)
-				transform.Translate (Vector2.right * speed * Time.deltaTime);
-			else
-				transform.Translate (-Vector2.right * speed * Time.deltaTime);
+		if (Jump) {
+			Jump = false;
+			if (firstTap) {
+				rb.velocity = new Vector2 (rb.velocity.x, jumpPower);
+				FindObjectOfType<SoundManager> ().Play ("Jump");
+			} else {
+				firstTap = true;
+				rb.bodyType = RigidbodyType2D.Dynamic;
+				gm.GameStart ();
+				return;
+			}
 		}
 
-		bool grounded = Physics2D.Linecast(transform.position, groundPos.position, 1 << LayerMask.NameToLayer("Ground"));
-		anim.SetBool ("grounded", grounded);
+		if (!firstTap)
+			return;
 
-		//if (Input.GetKeyDown (KeyCode.Space) && grounded && !gameover)
-		if (Input.GetMouseButtonDown(0) && grounded)
-			jump = true;
+		if(cam.facingRight)
+			transform.Translate (Vector2.right * speed * Time.deltaTime);
+		else
+			transform.Translate (-Vector2.right * speed * Time.deltaTime);
 
 		if (transform.position.y < 0 && !finish) {
 
@@ -72,22 +88,6 @@ public class Player : MonoBehaviour {
 			rb.bodyType = RigidbodyType2D.Static;
 
 			gm.GameFail ();
-		}
-	}
-	
-	// Update is called once per frame
-	void FixedUpdate () {
-
-		if (jump) {
-			jump = false;
-			if (!firstTap) {
-				firstTap = true;
-				rb.bodyType = RigidbodyType2D.Dynamic;
-				gm.GameStart ();
-			} else {
-				rb.velocity = new Vector2 (rb.velocity.x, jumpPower);
-				FindObjectOfType<SoundManager> ().Play ("Jump");
-			}
 		}
 	}
 

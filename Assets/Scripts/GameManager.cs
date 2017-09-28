@@ -55,7 +55,6 @@ public class GameManager : MonoBehaviour {
 		int x = PlayerPrefs.GetInt ("stage" + stage + "level" + map);
 		if (x < currentCoin) {
 			PlayerPrefs.SetInt ("stage" + stage + "level" + map, currentCoin);
-			print ("cyaa " + PlayerPrefs.GetInt ("stage" + stage + "level" + map));
 		}
 
 		if (gl.mapId < gl.stages[stage].maps.Length - 1) {

@@ -21,7 +21,7 @@ public class MenuManager : MonoBehaviour {
 	public GenerateLevel gm;
 
 	void Start () {
-		//PlayerPrefs.DeleteAll ();
+		PlayerPrefs.DeleteAll ();
 		FindObjectOfType<SoundManager> ().Stop ("BGM Gameplay");
 		FindObjectOfType<SoundManager> ().Play ("BGM Menu");
 

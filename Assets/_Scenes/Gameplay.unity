@@ -1306,6 +1306,10 @@ Prefab:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1176063196692516, guid: c939d02303d06ff4893d0529ba4790c4, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 212364831314797514, guid: c939d02303d06ff4893d0529ba4790c4, type: 2}
     - {fileID: 212186202503575792, guid: c939d02303d06ff4893d0529ba4790c4, type: 2}
