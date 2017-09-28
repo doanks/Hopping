@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour {
 
 	public Text leveltext;
+	//public Text textCount;
 
 	public int levelChoice;
 	int levelCount;
@@ -17,12 +18,17 @@ public class MenuManager : MonoBehaviour {
 
 	int stageId;
 
+	public GenerateLevel gm;
+
 	void Start () {
 		//PlayerPrefs.DeleteAll ();
 		FindObjectOfType<SoundManager> ().Stop ("BGM Gameplay");
 		FindObjectOfType<SoundManager> ().Play ("BGM Menu");
 
-		GenerateLevel.instance.stageCount = stagePrefs.Length;
+		while (gm == null)
+			gm = GenerateLevel.instance;
+
+		gm.stageCount = stagePrefs.Length;
 
 		for (int i = 0; i < stagePrefs.Length; i++) {
 			stagePrefs[i] = PlayerPrefs.GetInt ("unlock_count_stage" + i);
@@ -30,19 +36,25 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void ButtonNext () {
-		if (levelChoice < levelCount) {
-			levelChoice++;
-			leveltext.text = (levelChoice + 1).ToString();
-			GenerateLevel.instance.SetMap (stageId, levelChoice);
-		}
+
+		if (levelChoice >= levelCount)
+			return;
+
+		levelChoice++;
+		leveltext.text = (levelChoice + 1).ToString();
+		//textCount.text = (levelChoice + 1) + " / " + gm.stages [stageId].maps.Length;
+		gm.SetMap (stageId, levelChoice);
 	}
 
 	public void ButtonPrev () {
-		if (levelChoice > 0 ) {
-			levelChoice--;
-			leveltext.text = (levelChoice + 1).ToString();
-			GenerateLevel.instance.SetMap (stageId, levelChoice);
-		}
+
+		if (levelChoice <= 0)
+			return;
+		
+		levelChoice--;
+		leveltext.text = (levelChoice + 1).ToString();
+		//textCount.text = (levelChoice + 1) + " / " + gm.stages [stageId].maps.Length;
+		gm.SetMap (stageId, levelChoice);
 	}
 
 	public void ButtonStart () {
@@ -61,7 +73,8 @@ public class MenuManager : MonoBehaviour {
 
 		levelChoice = levelCount;
 		leveltext.text = (levelCount+1).ToString ();
-		GenerateLevel.instance.SetMap (id, levelChoice);
+		//textCount.text = (levelCount + 1) + " / " + gm.stages [id].maps.Length;
+		gm.SetMap (id, levelChoice);
 
 		stages.SetActive (false);
 		levelPack.SetActive (true);
