@@ -8,7 +8,7 @@ public class GoogleAds : MonoBehaviour {
 
 	public BannerView bannerView;
 	public InterstitialAd interstitial;
-	public NativeExpressAdView native;
+//	public NativeExpressAdView native;
 
 	void Awake () {
 		if (instance == null)
@@ -19,6 +19,10 @@ public class GoogleAds : MonoBehaviour {
 		}
 
 		DontDestroyOnLoad(gameObject);
+	}
+
+	void Start () {
+		RequestBanner ();
 	}
 
 	public void RequestBanner()
@@ -32,7 +36,7 @@ public class GoogleAds : MonoBehaviour {
 		#endif
 
 		// Create a 320x50 banner at the top of the screen.
-		BannerView bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+		bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
 		// Create an empty ad request.
 		AdRequest request = new AdRequest.Builder().Build();
 		// Load the banner with the request.

@@ -16,6 +16,8 @@ public class CameraFollow : MonoBehaviour {
 
 	bool firstPos;
 
+	public float yp;
+
 	//Vector3 velocity = Vector3.zero;
 
 	void Start () {
@@ -29,7 +31,8 @@ public class CameraFollow : MonoBehaviour {
 		if (finish || target == null)
 			return;
 
-		yPos = target.transform.position.y + 1f;
+		yPos = Mathf.Lerp (transform.position.y, target.transform.position.y + 1f, 0.35f);
+		//yPos = Mathf.Lerp(yPos, yp, .1f);
 
 		if (facingRight)
 			offsetX = 4f;

@@ -23,8 +23,6 @@ public class MenuManager : MonoBehaviour {
 	void Start () {
 		//PlayerPrefs.DeleteAll ();
 
-		GoogleAds.instance.RequestBanner ();
-
 		FindObjectOfType<SoundManager> ().Stop ("BGM Gameplay");
 		FindObjectOfType<SoundManager> ().Play ("BGM Menu");
 

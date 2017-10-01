@@ -141,7 +141,7 @@ PlayerSettings:
   targetPixelDensity: 0
   resolutionScalingMode: 0
   applicationIdentifier:
-    Android: com.SoulLab.lol.doll.surprise.adventure
+    Android: com.lol.surprise.dolls.run
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
@@ -217,8 +217,8 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: D:/GIT Project/Key/com.SoulLab.lol.doll.surprise.adventure.keystore
-  AndroidKeyaliasName: asd
+  AndroidKeystoreName: D:/GIT Project/Key/com.lol.surprise.dolls.run.keystore
+  AndroidKeyaliasName: soul
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   androidEnableBanner: 1
@@ -232,7 +232,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: f25d1b8a535e304468a1c39bd77ce0c3, type: 3}
+      m_Icon: {fileID: 2800000, guid: 6f2f132e0144b27448a5e61dd9ef3668, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
