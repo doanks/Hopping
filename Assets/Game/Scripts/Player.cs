@@ -14,34 +14,26 @@ public class Player : MonoBehaviour {
 	public Transform myParent;
 
 	bool firstTap;
-	bool gameover;
-	bool finish;
+	public bool gameover;
 	bool Jump;
 
 	float gravityDefault;
 	bool gravityChange;
 
-	CameraFollow cam;
 	GameManager gm;
 
 	// Use this for initialization
 	void Start () {
 
 		gm	= FindObjectOfType<GameManager> ();
-		cam = FindObjectOfType<CameraFollow> ();
 
 		gravityDefault = rb.gravityScale;
 
 		if (transform.position.x > 0) {
-			cam.facingRight = false;
 			myParent.localScale = new Vector2 (myParent.localScale.x * -1, myParent.localScale.y);
-			transform.parent = null;
-		} else {
-			cam.facingRight = true;
+		} 
 
-		}
-		//cam.facingRight = Mathf.Sign(transform.localScale.x) == 1 ? true : false;
-		cam.target = gameObject.transform;
+		transform.parent = null;
 	}
 
 	void Update () {
@@ -55,14 +47,6 @@ public class Player : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) && grounded){
 			Jump = true;
 		}
-
-		if (!firstTap)
-			return;
-
-		if(cam.facingRight)
-			transform.Translate (Vector2.right * speed * Time.deltaTime);
-		else
-			transform.Translate (-Vector2.right * speed * Time.deltaTime);
 	}
 
 	void FixedUpdate () {
@@ -83,12 +67,14 @@ public class Player : MonoBehaviour {
 			}
 		}
 
+		if (!firstTap)
+			return;
 
-
-		if (transform.position.y < 0 && !finish) {
+		rb.velocity = new Vector2 (speed * Mathf.Sign(transform.localScale.x), rb.velocity.y);
+			
+		if (transform.position.y < 0) {
 
 			gameover = true;
-			cam.finish = true;
 
 			anim.enabled = false;
 			rb.bodyType = RigidbodyType2D.Static;
@@ -100,8 +86,7 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		
 		if (other.tag == "Finish") {
-			finish = true;
-			cam.finish = true;
+			gameover = true;
 			gm.GameFinish ();
 		}
 
@@ -109,7 +94,6 @@ public class Player : MonoBehaviour {
 			
 			float flipX = transform.localScale.x * -1f;
 			transform.localScale = new Vector2 (flipX, transform.localScale.y);
-			cam.facingRight = !cam.facingRight;
 		}
 
 		if (other.tag == "Fast") {
@@ -128,13 +112,11 @@ public class Player : MonoBehaviour {
 			rb.gravityScale = gravityDefault;
 		}
 
-		if (other.collider.tag == "Fail" && !finish) {
+		if (other.collider.tag == "Fail") {
 
 			FindObjectOfType<SoundManager> ().Play ("Fail");
 
 			gameover = true;
-			cam.finish = true;
-
 			anim.enabled = false;
 			rb.bodyType = RigidbodyType2D.Static;
 
@@ -142,8 +124,10 @@ public class Player : MonoBehaviour {
 		}
 
 		if (other.collider.tag == "Perr") {
-			gravityChange = true;
+
 			FindObjectOfType<SoundManager> ().Play ("Long Jump");
+			
+			gravityChange = true;
 			rb.gravityScale = 6.5f;
 			rb.velocity = new Vector2 (rb.velocity.x, 28);
 		}

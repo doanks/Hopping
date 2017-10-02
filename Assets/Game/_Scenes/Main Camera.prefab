@@ -135,11 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gl: {fileID: 0}
-  target: {fileID: 0}
+  player: {fileID: 0}
   map: {fileID: 0}
   smooth: 0.1
   camLimitDistance: 7
-  facingRight: 0
   finish: 0
 --- !u!124 &124732840089863362
 Behaviour:

@@ -54,7 +54,7 @@ MonoBehaviour:
   mapSelected: {fileID: 2800000, guid: 269fbf1e0d594f741ab99fb417dfbd96, type: 3}
   stages:
   - maps:
-    - {fileID: 2800000, guid: 72af6b6ac68bc3c44b5f37b3e07b2e89, type: 3}
+    - {fileID: 2800000, guid: e8aa0052b99a57f48a1ccfe175ff2cbb, type: 3}
     - {fileID: 2800000, guid: f1c28a95fb7e44d4596d05f13a58c599, type: 3}
     - {fileID: 2800000, guid: e8aa0052b99a57f48a1ccfe175ff2cbb, type: 3}
     - {fileID: 2800000, guid: 822e1aa16bb309d4ea8192039540a536, type: 3}
