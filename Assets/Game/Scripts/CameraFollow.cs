@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CameraFollow : MonoBehaviour {
 
 	public GenerateLevel gl;
-	public Player target;
-
+	public Transform target;
 	public Texture2D map;
 	public float smooth;
 	public float camLimitDistance;
@@ -14,36 +11,31 @@ public class CameraFollow : MonoBehaviour {
 	float xPos, yPos;
 	float offsetX;
 
+	public bool facingRight;
+	public bool finish;
+
 	bool firstPos;
 
-	public float targetPos;
+	//Vector3 velocity = Vector3.zero;
 
 	void Start () {
 
 		gl = FindObjectOfType<GenerateLevel>();
-		target = FindObjectOfType<Player> ();
 		map = gl.mapSelected;
-		//yPos = target.transform.position.y + 1f;
 	}
 		
 	void LateUpdate () {
 
-		if (target == null) {
-			target = FindObjectOfType<Player> ();
+		if (finish || target == null)
 			return;
-		}
 
-		if (map == null) {
-			gl = FindObjectOfType<GenerateLevel>();
-			map = gl.mapSelected;
-			//yPos = target.transform.position.y + 1f;
-			return;
-		}
+		//yPos = target.transform.position.y + 1f;
+		yPos = Mathf.Lerp(transform.position.y,  target.transform.position.y + .5f, smooth);
 
-		yPos = target.transform.position.y + 1f;
-		//yPos = Mathf.Lerp (transform.position.y, target.transform.position.y + 1f, smooth);
-
-		offsetX = 4f * Mathf.Sign (target.transform.localScale.x);
+		if (facingRight)
+			offsetX = 4f;
+		else
+			offsetX = -4f;
 
 		if (target.transform.position.x + offsetX < camLimitDistance) {
 			xPos = camLimitDistance;
@@ -57,24 +49,32 @@ public class CameraFollow : MonoBehaviour {
 
 		Vector3 camPos = new Vector3 (xPos, yPos, transform.position.z);
 		transform.position = camPos;
-	}
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 //		if (!firstPos) {
 //			firstPos = true;
 //			transform.position = camPos;
 //		} else
 //			transform.position = Vector3.SmoothDamp (transform.position, camPos, ref velocity, smooth);
-//transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+			//transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+	}
+
+//	Vector3 offset;
+//
+////	public void GetOffset () {
+////		offset = transform.position - target.transform.position;
+////	}
+//
+//	void LateUpdate () {
+//
+//		if (target == null)
+//			return;
+//		
+//		//transform.position = target.transform.position + offset;
+//
+//		Vector3 delta = target.transform.position - Vector3.zero;
+//		Vector3 destination = transform.position + delta;
+//
+//		transform.position = destination;
+//
+//	}
+}

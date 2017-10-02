@@ -21,10 +21,6 @@ public class GoogleAds : MonoBehaviour {
 		DontDestroyOnLoad(gameObject);
 	}
 
-	void Start () {
-		RequestBanner ();
-	}
-
 	public void RequestBanner()
 	{
 		#if UNITY_ANDROID
