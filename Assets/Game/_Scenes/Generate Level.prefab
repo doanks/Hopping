@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0833bb322fdb41a48aef5eac31559cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mapSelected: {fileID: 0}
+  mapSelected: {fileID: 2800000, guid: 269fbf1e0d594f741ab99fb417dfbd96, type: 3}
   stages:
   - maps:
     - {fileID: 2800000, guid: 72af6b6ac68bc3c44b5f37b3e07b2e89, type: 3}

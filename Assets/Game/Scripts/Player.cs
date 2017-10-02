@@ -15,6 +15,7 @@ public class Player : MonoBehaviour {
 
 	bool firstTap;
 	bool gameover;
+	bool Jump;
 
 	float gravityDefault;
 	bool gravityChange;
@@ -31,15 +32,9 @@ public class Player : MonoBehaviour {
 		gravityDefault = rb.gravityScale;
 
 		if (transform.position.x > 0) {
-			cam.facingRight = false;
 			myParent.localScale = new Vector2 (myParent.localScale.x * -1, myParent.localScale.y);
 			transform.parent = null;
-		} else {
-			cam.facingRight = true;
-
 		}
-		//cam.facingRight = Mathf.Sign(transform.localScale.x) == 1 ? true : false;
-		cam.target = gameObject.transform;
 	}
 
 	void Update () {
@@ -51,6 +46,29 @@ public class Player : MonoBehaviour {
 		anim.SetBool ("grounded", grounded);
 
 		if (Input.GetMouseButtonDown(0) && grounded){
+			Jump = true;
+		}
+			
+		if (!firstTap)
+			return;
+
+		transform.Translate (Vector2.right * speed * Mathf.Sign(transform.localScale.x) * Time.deltaTime);
+
+		if (transform.position.y < 0) {
+
+			gameover = true;
+
+			anim.enabled = false;
+			rb.bodyType = RigidbodyType2D.Static;
+
+			gm.GameFail ();
+		}
+	}
+
+	void FixedUpdate () {
+
+		if (Jump) {
+			Jump = false;
 			if (firstTap) {
 				rb.velocity = new Vector2 (rb.velocity.x, jumpPower);
 				FindObjectOfType<SoundManager> ().Play ("Jump");
@@ -61,31 +79,11 @@ public class Player : MonoBehaviour {
 				return;
 			}
 		}
-			
-		if (!firstTap)
-			return;
-
-		if(cam.facingRight)
-			transform.Translate (Vector2.right * speed * Time.deltaTime);
-		else
-			transform.Translate (-Vector2.right * speed * Time.deltaTime);
-
-		if (transform.position.y < 0) {
-
-			gameover = true;
-			cam.finish = true;
-
-			anim.enabled = false;
-			rb.bodyType = RigidbodyType2D.Static;
-
-			gm.GameFail ();
-		}
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
 
 		if (other.tag == "Finish") {
-			cam.finish = true;
 			gm.GameFinish ();
 		}
 
@@ -93,7 +91,6 @@ public class Player : MonoBehaviour {
 
 			float flipX = transform.localScale.x * -1f;
 			transform.localScale = new Vector2 (flipX, transform.localScale.y);
-			cam.facingRight = !cam.facingRight;
 		}
 
 		if (other.tag == "Fast") {
@@ -107,8 +104,6 @@ public class Player : MonoBehaviour {
 
 	void OnCollisionEnter2D (Collision2D other) {
 
-		//stopFollow = false;
-
 		if (gravityChange) {
 			gravityChange = false;
 			rb.gravityScale = gravityDefault;
@@ -119,7 +114,6 @@ public class Player : MonoBehaviour {
 			FindObjectOfType<SoundManager> ().Play ("Fail");
 
 			gameover = true;
-			cam.finish = true;
 
 			anim.enabled = false;
 			rb.bodyType = RigidbodyType2D.Static;

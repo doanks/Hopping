@@ -11,7 +11,7 @@ public class MapGenerator : MonoBehaviour {
 
 	public GenerateLevel lm;
 	public Texture2D map;
-	public GameObject mainCam;
+	//public GameObject mainCam;
 	public ColorToPrefab[] colorMappings;
 
 	// Use this for initialization
@@ -20,7 +20,7 @@ public class MapGenerator : MonoBehaviour {
 		map = lm.mapSelected;
 		Generatelevel ();
 
-		Instantiate (mainCam, mainCam.transform.position, Quaternion.identity);
+		//Instantiate (mainCam, mainCam.transform.position, Quaternion.identity);
 	}
 
 	void Generatelevel () {

@@ -93,7 +93,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 4.25
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -137,11 +137,9 @@ MonoBehaviour:
   gl: {fileID: 0}
   target: {fileID: 0}
   map: {fileID: 0}
-  smooth: 0
+  smooth: 0.05
   camLimitDistance: 7
-  facingRight: 0
-  finish: 0
-  yp: 0
+  targetPos: 0
 --- !u!124 &124732840089863362
 Behaviour:
   m_ObjectHideFlags: 1
