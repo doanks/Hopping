@@ -21,8 +21,7 @@ public class MenuManager : MonoBehaviour {
 	public GenerateLevel gm;
 
 	void Start () {
-		PlayerPrefs.DeleteAll ();
-		GoogleAds.instance.RequestBanner();
+		//PlayerPrefs.DeleteAll ();
 		FindObjectOfType<SoundManager> ().Stop ("BGM Gameplay");
 		FindObjectOfType<SoundManager> ().Play ("BGM Menu");
 
@@ -59,7 +58,6 @@ public class MenuManager : MonoBehaviour {
 	}
 
 	public void ButtonStart () {
-		GoogleAds.instance.bannerView.Destroy ();
 		FindObjectOfType<SoundManager> ().Stop ("BGM Menu");
 		SceneManager.LoadScene ("Gameplay");
 	}

@@ -15,8 +15,6 @@ public class CameraFollow : MonoBehaviour {
 
 	bool firstPos;
 
-	Vector3 velocity = Vector3.zero;
-
 	void Start () {
 
 		gl = FindObjectOfType<GenerateLevel>();
@@ -29,7 +27,7 @@ public class CameraFollow : MonoBehaviour {
 		if (player == null || player.gameover)
 			return;
 
-		yPos = player.transform.position.y + .5f;
+		yPos = Mathf.Lerp (transform.position.y, player.transform.position.y + .5f, smooth);
 		offsetX = Mathf.Sign (player.transform.localScale.x) * 4f;
 
 		if (player.transform.position.x + offsetX < camLimitDistance) {
@@ -43,12 +41,12 @@ public class CameraFollow : MonoBehaviour {
 		}
 
 		Vector3 camPos = new Vector3 (xPos, yPos, transform.position.z);
-
-		if (!firstPos) {
-			firstPos = true;
-			transform.position = camPos;
-		} else
-			//transform.position = Vector3.SmoothDamp (transform.position, camPos, ref velocity, smooth);
-			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
+		transform.position = camPos;
+//		if (!firstPos) {
+//			firstPos = true;
+//			transform.position = camPos;
+//		} else
+//			//transform.position = Vector3.SmoothDamp (transform.position, camPos, ref velocity, smooth);
+//			transform.position = Vector3.Lerp (transform.position, camPos, smooth);
 	}
 }

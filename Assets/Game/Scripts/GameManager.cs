@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour {
 		
 		gl = GameObject.FindGameObjectWithTag ("LM").GetComponent<GenerateLevel> ();
 
-		if(Mathf.Repeat(playCount,6) == 0) 
+		if(Mathf.Repeat(playCount,5) == 0) 
 			GoogleAds.instance.RequestInterstitial();
 
 		playCount++;
@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour {
 
 	public void GameFail () {
 
-		if(Mathf.Repeat(playCount,6) == 0) 
+		if(Mathf.Repeat(playCount,5) == 0) 
 			GoogleAds.instance.ShowInterstitial();
 		
 		StartCoroutine (FailCoroutine ());
@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour {
 
 	public void GameFinish () {
 
-		if(Mathf.Repeat(playCount,6) == 0) 
+		if(Mathf.Repeat(playCount,5) == 0) 
 			GoogleAds.instance.ShowInterstitial();
 		
 		complete.SetActive (true);

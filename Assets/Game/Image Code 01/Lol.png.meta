@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: ad3455bb6fa8cb74bb782f309ff83eff
-timeCreated: 1506490484
+timeCreated: 1507005603
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -88,12 +88,12 @@ TextureImporter:
       name: Lol_0
       rect:
         serializedVersion: 2
-        x: 171
+        x: 85
         y: 206
-        width: 465
+        width: 551
         height: 772
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5783159, y: 0.5018633}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

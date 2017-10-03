@@ -32,7 +32,7 @@ public class GoogleAds : MonoBehaviour {
 		#endif
 
 		// Create a 320x50 banner at the top of the screen.
-		bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+		bannerView = new BannerView(adUnitId, AdSize.SmartBanner, AdPosition.Bottom);
 		// Create an empty ad request.
 		AdRequest request = new AdRequest.Builder().Build();
 		// Load the banner with the request.
