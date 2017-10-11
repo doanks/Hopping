@@ -24,7 +24,7 @@ public class GoogleAds : MonoBehaviour {
 	public void RequestBanner()
 	{
 		#if UNITY_ANDROID
-		string adUnitId = "ca-app-pub-1999310074725098/5081825272";
+		string adUnitId = "ca-app-pub-1999310074725098/4231727708";
 		#elif UNITY_IPHONE
 		string adUnitId = "INSERT_IOS_BANNER_AD_UNIT_ID_HERE";
 		#else
@@ -42,7 +42,7 @@ public class GoogleAds : MonoBehaviour {
 	public void RequestInterstitial()
 	{
 		#if UNITY_ANDROID
-		string adUnitId = "ca-app-pub-1999310074725098/6676487282";
+		string adUnitId = "ca-app-pub-1999310074725098/7823009428";
 		#elif UNITY_IPHONE
 		string adUnitId = "INSERT_IOS_INTERSTITIAL_AD_UNIT_ID_HERE";
 		#else
